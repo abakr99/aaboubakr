@@ -1,0 +1,42 @@
+// greate a work histograms
+{
+ cout << "----------------------------------------------------------------------" << endl;
+ cout << "start filling histograms" << endl;
+ cout << "----------------------------------------------------------------------" << endl;
+TH1F * ha0 = new TH1F("ha0","adc 0 histogram", 1200, 0., 1200.);
+TH1F * ha1 = new TH1F("ha1","adc 1 histogram", 1200, 0., 1200.);
+TH1F * ha2 = new TH1F("ha2","adc 2 histogram", 1200, 0., 1200.);
+TH1F * ha3 = new TH1F("ha3","adc 3 histogram", 1200, 0., 1200.);
+TH1F * ha4 = new TH1F("ha4","adc 4 histogram", 1200, 0., 1200.);
+TH1F * ha5 = new TH1F("ha5","adc 5 histogram", 1200, 0., 1200.);
+TH1F * ha6 = new TH1F("ha6","adc 6 histogram", 1200, 0., 1200.);
+TH1F * ha7 = new TH1F("ha7","adc 7 histogram", 1200, 0., 1200.);
+camac->Project("ha0","adc0");
+camac->Project("ha1","adc1");
+camac->Project("ha2","adc2");
+camac->Project("ha3","adc3");
+camac->Project("ha4","adc4");
+camac->Project("ha5","adc5");
+camac->Project("ha6","adc6");
+camac->Project("ha7","adc7");
+TH1F * ht0 = new TH1F("ht0","tdc 0 histogram", 2400, 0., 2400.);
+TH1F * ht1 = new TH1F("ht1","tdc 1 histogram", 2400, 0., 2400.);
+TH1F * ht2 = new TH1F("ht2","tdc 2 histogram", 2400, 0., 2400.);
+TH1F * ht3 = new TH1F("ht3","tdc 3 histogram", 2400, 0., 2400.);
+TH1F * ht4 = new TH1F("ht4","tdc 4 histogram", 2400, 0., 2400.);
+TH1F * ht5 = new TH1F("ht5","tdc 5 histogram", 2400, 0., 2400.);
+TH1F * ht6 = new TH1F("ht6","tdc 6 histogram", 2400, 0., 2400.);
+TH1F * ht7 = new TH1F("ht7","tdc 7 histogram", 2400, 0., 2400.);
+camac->Project("ht0","tdc0");
+camac->Project("ht1","tdc1");
+camac->Project("ht2","tdc2");
+camac->Project("ht3","tdc3");
+camac->Project("ht4","tdc4");
+camac->Project("ht5","tdc5");
+camac->Project("ht6","tdc6");
+camac->Project("ht7","tdc7");
+ cout << "----------------------------------------------------------------------" << endl;
+ cout << "histograms are ready " << endl;
+ cout << "----------------------------------------------------------------------" << endl;
+  }
+

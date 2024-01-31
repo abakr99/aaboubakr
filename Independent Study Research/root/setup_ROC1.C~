@@ -1,0 +1,35 @@
+{
+  // create a Codafile Object
+
+  gROOT->Reset();
+
+  TCodafile *C = new TCodafile(); // create the object
+
+  bar_c = new TControlBar("vertical", "Analysis Control");
+
+  bar_c->AddButton("analyze new codafile adc only",".x ./root/analyze.ROC1_adc.C", "analyze codafile.dat");
+  bar_c->AddButton("analyze new codafile",".x ./root/analyze.ROC1.C", "analyze codafile.dat");
+  bar_c->AddButton("make histograms",".x ./root/make_histo.ROC1.C", "create histograms");
+  bar_c->AddButton("QUIT",".x ./root/quit.C", "Quit Root");
+
+  Int_t  n_bar_channels = 16;
+  for (Int_t i=0; i<16; i++){
+    
+    TString a_name = TString::Format("adc%d", i);
+    TString a_command = TString::Format("ha%d->Draw()",i);
+    TString a_comment = TString::Format("ADC channel %d", i);
+    bar_c->AddButton(a_name,a_command, a_comment);
+  }
+
+  for (Int_t i=0; i<16; i++){
+    TString t_name = TString::Format("tdc%d", i);
+    TString t_command = TString::Format("ht%d->Draw()",i);
+    TString t_comment = TString::Format("TDC channel %d", i);
+    bar_c->AddButton(t_name,t_command, t_comment);
+    
+  }
+
+  bar_c->Show();
+  gROOT->SaveContext();
+
+}

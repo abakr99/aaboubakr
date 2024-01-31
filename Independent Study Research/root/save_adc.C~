@@ -1,0 +1,8 @@
+void save_adc(Int_t i, h):
+{
+  TSTring f_name = TString::Format("adc%d.root",i)
+  o = new TFile("adc15.root","recreate");
+  h->Write();
+  o.Close();
+
+}
